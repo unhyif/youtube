@@ -1,0 +1,36 @@
+:root {
+  --title-size: 1.8rem;
+}
+
+.video {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.thumbnail {
+  transition: all 0.2s ease-in-out;
+}
+
+.video:hover > .thumbnail {
+  filter: brightness(0.7);
+}
+
+.info {
+  padding: 0 0.5rem;
+}
+
+.title {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  font-weight: 400;
+  font-size: var(--title-size);
+  line-height: calc(var(--title-size) + 0.5rem);
+}
+
+.channel {
+  font-size: 1.4rem;
+  color: var(--gray);
+}
