@@ -3,14 +3,14 @@
 }
 
 .video {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
   cursor: pointer;
+  -webkit-backface-visibility: hidden;
 }
 
 .thumbnail {
-  transition: all 0.2s ease-in-out;
+  transition: all 0.1s ease-in;
+  margin-bottom: 1rem;
+  width: 100%;
 }
 
 .video:hover > .thumbnail {
@@ -22,12 +22,13 @@
 }
 
 .title {
+  display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
-  font-weight: 400;
   font-size: var(--title-size);
   line-height: calc(var(--title-size) + 0.5rem);
+  margin-bottom: 0.5rem;
 }
 
 .channel {

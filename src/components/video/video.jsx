@@ -12,9 +12,10 @@ const Video = ({
 }) => (
   <li className={styles.video}>
     <img src={url} alt={title} className={styles.thumbnail} />
+
     <div className={styles.info}>
       <h2 className={styles.title}>{title}</h2>
-      <span className={styles.channel}>{channel}</span>
+      <p className={styles.channel}>{channel}</p>
     </div>
   </li>
 );

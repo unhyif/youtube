@@ -1,5 +1,9 @@
+.popular {
+  padding: 3% 10%;
+}
+
 .videos {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 5rem;
+  gap: 5rem 8rem;
 }

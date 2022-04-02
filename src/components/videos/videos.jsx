@@ -4,7 +4,7 @@ import styles from "./videos.module.css";
 
 const Videos = ({ videos }) => {
   return (
-    <section className="popular">
+    <section className={styles.popular}>
       <ul className={styles.videos}>
         {videos.map((video) => (
           <Video key={video.id} video={video.snippet} />
