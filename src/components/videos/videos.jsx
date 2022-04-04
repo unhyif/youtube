@@ -2,15 +2,18 @@ import React from "react";
 import Video from "../video/video";
 import styles from "./videos.module.css";
 
-const Videos = ({ videos }) => {
+const Videos = ({ videos, onSelect, display }) => {
+  const videosClass =
+    display === "wide"
+      ? styles.videos
+      : `${styles.videos} ${styles["videos--long"]}`;
+
   return (
-    <section className={styles.popular}>
-      <ul className={styles.videos}>
-        {videos.map((video) => (
-          <Video key={video.id} video={video.snippet} />
-        ))}
-      </ul>
-    </section>
+    <ul className={videosClass}>
+      {videos.map((video) => (
+        <Video key={video.id} video={video} onSelect={onSelect} />
+      ))}
+    </ul>
   );
 };
 

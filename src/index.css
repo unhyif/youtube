@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap");
 
+:root {
+  --background: #f9f9f9;
+  --gray: #888888;
+  --weak-gray: rgba(220, 220, 220);
+}
+
 * {
   outline: none;
 }
