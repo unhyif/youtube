@@ -13,33 +13,21 @@ const App = ({ youtube }) => {
 
   const handleSearch = useCallback((q) => {
     setLoading(true);
-    console.log("loading -> true"); // REVIEW: 1
-
     setSelectedVideo(null);
-    console.log("selectedVideo -> null"); // REVIEW: 2
-
-    // REVIEW: 3 Component rendering
 
     // REVIEW: promise
     youtube.search(q).then((videos) => {
       setVideos(videos.map((video) => ({ ...video, id: video.id.videoId })));
-      console.log("Change videos : ", videos); // REVIEW: 4
-
       setLoading(false);
-      console.log("loading -> false"); // REVIEW: 5
     });
-
-    // REVIEW: 6 Component rendering
   }, []);
 
   useEffect(() => {
     youtube.popular().then((videos) => setVideos(videos));
-    console.log("Effect happening"); // REVIEW: 2
-  }, []); // REVIEW: Argument should be a function & after mounting
+  }, []); // REVIEW: Argument should be a function & It's executed after mounting
 
   return (
     <>
-      {console.log("Component rendering")} {/* REVIEW: 1, 3 */}
       <Header onSearch={handleSearch}></Header>
       {loading ? (
         <div className={styles.loading}>

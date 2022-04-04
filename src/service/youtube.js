@@ -1,3 +1,15 @@
+function decodeHtml(html) {
+  const txt = document.createElement("textarea");
+  txt.innerHTML = html;
+  return txt.value;
+}
+
+function getVideoWithDecodedSnippet(video) {
+  video.snippet.title = decodeHtml(video.snippet.title);
+  video.snippet.description = decodeHtml(video.snippet.description);
+  return video;
+}
+
 class Youtube {
   constructor() {
     this.key = process.env.REACT_APP_YOUTUBE_KEY;
@@ -10,6 +22,7 @@ class Youtube {
     )
       .then((res) => res.json())
       .then((data) => data.items)
+      .then((videos) => videos.map(getVideoWithDecodedSnippet))
       .catch((e) => console.log(e));
   }
 
@@ -19,6 +32,7 @@ class Youtube {
     )
       .then((res) => res.json())
       .then((data) => data.items)
+      .then((videos) => videos.map(getVideoWithDecodedSnippet))
       .catch((e) => console.log(e));
   }
 }
