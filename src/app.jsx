@@ -3,26 +3,20 @@ import Header from "./components/header/header";
 import Videos from "./components/videos/videos";
 import "./app.css";
 
-const API_KEY = process.env.REACT_APP_YOUTUBE_KEY;
-
-const App = () => {
+const App = ({ youtube }) => {
   const [videos, setVideos] = useState([]);
 
-  const loadVideos = useCallback((url) => {
-    return fetch(url)
-      .then((res) => res.json())
-      .then((data) => setVideos(data.items))
-      .catch((e) => console.log(e));
-  }, []);
-
   useEffect(() => {
-    const url = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&fields=items(id,snippet(title,channelTitle,thumbnails))&chart=mostPopular&maxResults=5&key=${API_KEY}`;
-    loadVideos(url);
+    youtube.popular().then((items) => setVideos(items));
+  }, []); // REVIEW: Argument should be a function
+
+  const onSearch = useCallback((q) => {
+    youtube.search(q).then((items) => setVideos(items));
   }, []);
 
   return (
     <>
-      <Header onSearch={loadVideos} api={API_KEY}></Header>
+      <Header onSearch={onSearch}></Header>
       <Videos videos={videos} />
     </>
   );
