@@ -32,7 +32,17 @@ class Youtube {
     )
       .then((res) => res.json())
       .then((data) => data.items)
-      .then((videos) => videos.map(getVideoWithDecodedSnippet))
+      .then((videos) =>
+        videos.map((video) => ({
+          id: video.id.videoId,
+          snippet: {
+            ...video.snippet, // REVIEW
+            title: decodeHtml(video.snippet.title),
+            description: decodeHtml(video.snippet.description),
+          },
+        }))
+      )
+
       .catch((e) => console.log(e));
   }
 }

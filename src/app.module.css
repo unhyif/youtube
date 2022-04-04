@@ -22,11 +22,11 @@
   border-right: 0.1rem solid var(--weak-gray);
 }
 
-.popular {
+.list {
   flex: 1 1 20%;
   padding: 2% 4% 4% 2%;
 }
 
-.popular--align {
+.list--align {
   padding: 3% 10%;
 }

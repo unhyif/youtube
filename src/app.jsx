@@ -6,6 +6,7 @@ import styles from "./app.module.css";
 
 const App = ({ youtube }) => {
   const [videos, setVideos] = useState([]);
+  // REVIEW: 같은 값으로 state update해도 re-render X
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -17,7 +18,7 @@ const App = ({ youtube }) => {
 
     // REVIEW: promise
     youtube.search(q).then((videos) => {
-      setVideos(videos.map((video) => ({ ...video, id: video.id.videoId })));
+      setVideos(videos);
       setLoading(false);
     });
   }, []);
@@ -46,8 +47,8 @@ const App = ({ youtube }) => {
           <section
             className={
               selectedVideo
-                ? styles.popular
-                : `${styles.popular} ${styles["popular--align"]}`
+                ? styles.list
+                : `${styles.list} ${styles["list--align"]}`
             }
           >
             {/* 삼항연산자 통해 하위 컴포넌트 클래스 관련 prop 상속 */}
