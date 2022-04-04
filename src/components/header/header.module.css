@@ -5,6 +5,10 @@ header {
   background: white;
   padding: 2rem 3rem;
   border-bottom: 0.1rem solid var(--weak-gray);
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  width: 100%;
 }
 
 .home {

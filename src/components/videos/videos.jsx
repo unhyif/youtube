@@ -16,5 +16,4 @@ const Videos = ({ videos, onSelect, display }) => {
     </ul>
   );
 };
-
 export default Videos;

@@ -1,5 +1,17 @@
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  font-size: 3rem;
+}
+
 .content {
   display: flex;
+  position: relative;
+  top: 9.7rem; /* TODO: Set it with JS */
+  padding-bottom: 2%;
 }
 
 /* REVIEW: flex */
