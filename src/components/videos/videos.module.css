@@ -8,3 +8,9 @@
   grid-template-columns: 1fr;
   gap: 4rem;
 }
+
+@media screen and (max-width: 54rem) {
+  .videos {
+    grid-template-columns: 1fr;
+  }
+}

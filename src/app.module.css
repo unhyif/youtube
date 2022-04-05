@@ -30,3 +30,20 @@
 .list--align {
   padding: 3% 10%;
 }
+
+@media screen and (max-width: 54rem) {
+  .content {
+    flex-direction: column;
+    top: 6.9rem; /* TODO */
+  }
+
+  .detail {
+    border-right: none;
+    border-bottom: 0.1rem solid var(--weak-gray);
+    padding: 8%;
+  }
+
+  .list {
+    padding: 8%;
+  }
+}

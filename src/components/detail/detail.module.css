@@ -26,3 +26,9 @@
   font-size: var(--desc-size);
   line-height: calc(var(--desc-size) + 1rem);
 }
+
+@media screen and (max-width: 54rem) {
+  iframe {
+    height: 30rem;
+  }
+}

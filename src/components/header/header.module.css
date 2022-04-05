@@ -51,3 +51,33 @@ header {
   padding-top: 1rem;
   width: 2.5rem;
 }
+
+@media screen and (max-width: 54rem) {
+  .home,
+  .searchForm {
+    width: auto;
+  }
+
+  header {
+    justify-content: space-between;
+    font-size: 2rem;
+    padding: 1rem 1.5rem;
+  }
+
+  .logo {
+    width: 4rem;
+  }
+
+  .searchForm {
+    width: 70%;
+  }
+
+  .searchForm input {
+    font-size: 1.8rem;
+    padding: 1.2rem 1.6rem;
+  }
+
+  .searchBtn img {
+    width: 2rem;
+  }
+}
